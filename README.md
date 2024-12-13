@@ -1,19 +1,10 @@
 Autonomous Taxi Service 🚖
 
-Website Link
+Website Link - Autonomous Taxi Service
 
-Autonomous Taxi Service
-
-Run the Project:
-
-	1.	Install dependencies:
-
-npm i
-
-
-	2.	Start the development server:
-
-npm run dev
+**Run the Project:**
+Install dependencies - npm i
+Start the development server - npm run dev
 
 Overview
 

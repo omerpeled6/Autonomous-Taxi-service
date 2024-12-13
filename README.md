@@ -39,49 +39,24 @@ Project Structure
 <img width="921" alt="Screenshot 2024-12-13 at 17 24 13" src="https://github.com/user-attachments/assets/f4aad32b-4420-4497-b018-ea4a5a3137c2" />
 
 
-Component Explanations
+**Component Explanations**
 
-FinishedOrders.jsx
+FinishedOrders.jsx - Displays a list of all completed ride requests, showing start and end locations and the taxi assigned.
+Navbar.jsx - The header of the application. It displays the app’s title, a live timer, and the count of waiting orders.
+OrderQueue.jsx - Shows all active ride requests in a queue. Displays the distance, start and end locations, and current status of each order.
+TaxiGraph.jsx - Visualizes the taxi positions, ride start and end points, and their connections on a 2D grid using a scatter plot.
+TaxiList.jsx - Lists all taxis, showing their ID, current location, and status (e.g., “standing” or “driving”).
+Timer.jsx - Displays a live timer that resets every 20 seconds, representing the interval at which new ride requests are generated.
 
-Displays a list of all completed ride requests, showing start and end locations and the taxi assigned.
+**Utility Functions Explained**
 
-Navbar.jsx
-
-The header of the application. It displays the app’s title, a live timer, and the count of waiting orders.
-
-OrderQueue.jsx
-
-Shows all active ride requests in a queue. Displays the distance, start and end locations, and current status of each order.
-
-TaxiGraph.jsx
-
-Visualizes the taxi positions, ride start and end points, and their connections on a 2D grid using a scatter plot.
-
-TaxiList.jsx
-
-Lists all taxis, showing their ID, current location, and status (e.g., “standing” or “driving”).
-
-Timer.jsx
-
-Displays a live timer that resets every 20 seconds, representing the interval at which new ride requests are generated.
-
-Utility Functions Explained
-
-	1.	calculateDistance
-Calculates the distance between two points (X, Y) using the Euclidean distance formula.
-	2.	getRandomCoordinate
-Returns a random coordinate within the grid (0 to 20).
-	3.	generateColor
-Generates a random RGB color to be assigned to taxis.
-	4.	createTaxis
-Creates an array of taxis with random initial positions, a starting status of “standing,” and unique colors.
-	5.	createOrder
-Creates a new ride request with random start and end points, ensuring the distance between them does not exceed 2 km.
-	6.	moveTaxi
-Moves a taxi toward a target destination at a constant speed of 20 meters/second (0.02 km/second) while only moving parallel to the X or Y axes.
-	7.	updateTaxiPosition
-Updates the real-time position and state of a taxi. Handles reaching destinations, changes the taxi’s state to “standing” or “driving,” and updates the order queues for active and completed requests.
-	8.	allocateClosestTaxi
-Finds the closest available taxi and assigns it to a ride request. If no taxis are available, the request remains in the queue.
+1.calculateDistance - Calculates the distance between two points (X, Y) using the Euclidean distance formula.
+2.getRandomCoordinate - Returns a random coordinate within the grid (0 to 20).
+3.generateColor - Generates a random RGB color to be assigned to taxis.
+4.createTaxis - Creates an array of taxis with random initial positions, a starting status of “standing,” and unique colors.
+5.createOrder - Creates a new ride request with random start and end points, ensuring the distance between them does not exceed 2 km.
+6.moveTaxi - Moves a taxi toward a target destination at a constant speed of 20 meters/second (0.02 km/second) while only moving parallel to the X or Y axes.
+7.updateTaxiPosition - Updates the real-time position and state of a taxi. Handles reaching destinations, changes the taxi’s state to “standing” or “driving,” and updates the order queues for active and completed requests.
+8.allocateClosestTaxi - Finds the closest available taxi and assigns it to a ride request. If no taxis are available, the request remains in the queue.
 
 

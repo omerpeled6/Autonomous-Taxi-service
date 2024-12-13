@@ -5,6 +5,7 @@ Website Link - [Autonomous Taxi Service](https://autonomous-taxi-service.onrende
 **Run the Project:**
 
 Install dependencies - npm i
+
 Start the development server - npm run dev
 
 Overview

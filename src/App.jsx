@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import TaxiList from './components/TaxiList'
 import TaxiGraph from './components/TaxiGraph'
 import FinishedOrders from './components/FinishedOrders'
@@ -18,14 +18,50 @@ export default function App() {
   const [orders, setOrders] = useState([])
   const [finishedOrders, setFinishedOrders] = useState([])
 
+  const taxisRef = useRef([])
+  useEffect(() => {
+    taxisRef.current = taxis
+  }, [taxis])
+
   useEffect(() => {
     setTaxis(createTaxis(NUM_TAXIS))
+
     const orderInterval = setInterval(() => {
       const newOrder = createOrder()
-      setOrders((prevOrders) => [...prevOrders, newOrder])
+      setOrders((prevOrders) => {
+        const updatedOrders = [...prevOrders, newOrder]
+        console.log('System State:')
+        console.log('Order Queue:')
+        if (updatedOrders.length === 0) {
+          console.log('Empty')
+        } else {
+          updatedOrders.forEach((order) =>
+            console.log(
+              `Order ${order.id}: Start(${order.startX.toFixed(
+                2
+              )}Km, ${order.startY.toFixed(2)}Km), End(${order.endX.toFixed(
+                2
+              )}Km, ${order.endY.toFixed(2)}Km), Status: ${order.status}`
+            )
+          )
+        }
+
+        console.log('Taxi locations:')
+        taxisRef.current.forEach((taxi) =>
+          console.log(
+            `Taxi-${taxi.id}: ${taxi.x.toFixed(2)}Km, ${taxi.y.toFixed(2)}Km (${
+              taxi.status
+            })`
+          )
+        )
+
+        return updatedOrders
+      })
     }, 20000)
+
     return () => clearInterval(orderInterval)
   }, [])
+
   useEffect(() => {
     const taxiUpdateInterval = setInterval(() => {
       setTaxis((prevTaxis) =>

@@ -36,19 +36,8 @@ Features
 
 Project Structure
 
-src/
-├── components/
-│   ├── FinishedOrders.jsx  // Displays completed orders
-│   ├── Navbar.jsx          // Header with the app title and waiting order count
-│   ├── OrderQueue.jsx      // Displays active ride requests
-│   ├── TaxiGraph.jsx       // Graph visualization for taxis and orders
-│   ├── TaxiList.jsx        // List of all taxis and their statuses
-│   └── Timer.jsx           // Timer displaying elapsed simulation time
-├── utils/
-│   └── utils.js            // Utility functions for taxi movement, order generation, and allocation logic
-├── App.jsx                 // Main application entry point
-├── index.css               // Global styles
-└── main.jsx                // React/Vite entry file
+<img width="921" alt="Screenshot 2024-12-13 at 17 24 13" src="https://github.com/user-attachments/assets/f4aad32b-4420-4497-b018-ea4a5a3137c2" />
+
 
 Component Explanations
 

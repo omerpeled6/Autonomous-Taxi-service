@@ -27,6 +27,7 @@ export function createTaxis(numTaxis) {
       color: generateColor(),
     })
   }
+  console.log(taxis)
   return taxis
 }
 

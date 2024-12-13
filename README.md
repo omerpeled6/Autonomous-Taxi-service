@@ -1,5 +1,3 @@
-Here’s the updated README with short explanations for each component:
-
 Autonomous Taxi Service 🚖
 
 Website Link
@@ -97,4 +95,4 @@ Updates the real-time position and state of a taxi. Handles reaching destination
 	8.	allocateClosestTaxi
 Finds the closest available taxi and assigns it to a ride request. If no taxis are available, the request remains in the queue.
 
-This README provides a comprehensive overview of the project, its structure, features, and components, helping developers quickly understand its purpose and functionality. Let me know if you need further refinements! 🚀
+

@@ -4,6 +4,7 @@ import TaxiGraph from './components/TaxiGraph'
 import FinishedOrders from './components/FinishedOrders'
 import OrderQueue from './components/OrderQueue'
 import Navbar from './components/Navbar'
+import Box from './components/Box'
 import {
   createTaxis,
   createOrder,
@@ -81,16 +82,25 @@ export default function App() {
   }, [taxis])
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center  ">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
       <Navbar />
-      <div className="w-full flex flex-col items-center gap-10">
-        <div className="flex gap-20">
-          <TaxiGraph className="mx-auto" taxis={taxis} orders={orders} />
-          <TaxiList taxis={taxis} />
+      <div className="w-full flex flex-col items-center gap-4 mt-3">
+        <div className="w-full flex justify-center gap-4 px-10">
+          <Box bgColor="bg-yellow-50">
+            <TaxiGraph className="mx-auto" taxis={taxis} orders={orders} />
+          </Box>
+          <Box bgColor="bg-red-50">
+            <TaxiList taxis={taxis} />
+          </Box>
         </div>
-        <div className="w-full justify-center flex gap-10">
-          <OrderQueue orders={orders} />
-          <FinishedOrders orders={finishedOrders} />
+
+        <div className="w-full flex justify-center gap-4 px-10">
+          <Box bgColor="bg-blue-50">
+            <OrderQueue orders={orders} />
+          </Box>
+          <Box bgColor="bg-green-50">
+            <FinishedOrders orders={finishedOrders} />
+          </Box>
         </div>
       </div>
     </div>

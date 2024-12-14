@@ -22,7 +22,9 @@ export default function OrderQueue({ orders }) {
                 </span>
                 <span
                   className={`px-2 py-1 rounded text-xs font-medium ${
-                    order.status === 'driving'
+                    order.status.includes('start')
+                      ? 'bg-green-100 text-green-600'
+                      : order.status.includes('end')
                       ? 'bg-red-100 text-red-600'
                       : 'bg-gray-100 text-gray-600'
                   }`}
